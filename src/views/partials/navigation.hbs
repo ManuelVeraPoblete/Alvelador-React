@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <i class="fas fa-link"></i> Al Velador.cl Administracion Pagina
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+       
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                {{#if user}}
+                    {{#if provincias }}
+                        <form action="/moteles/list/{{provicia_id}}" method="POST">
+                            <div class="input-group">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">
+                                        Provincias
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        {{#each provincias}}
+                                            <a class="dropdown-item" href="/moteles/list/{{provincia_id}}">{{provincia_nombre}}</a>
+                                        {{/each}}
+                                    </div>
+                                </li>
+                            </div>
+                        </form>
+                    {{/if}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/moteles/add">Agregar Motel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile">Datos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Salir</a>
+                    </li>
+                {{else}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signin">Ingresar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup">Registrarse</a>
+                    </li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</nav>
