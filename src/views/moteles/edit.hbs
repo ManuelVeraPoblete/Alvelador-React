@@ -1,28 +1,71 @@
 <header class="masthead ">
-    <div class="container">
-        <div class="col-md-7 mx-auto">
+    <div class="contenedor">
+        <div class="col-md-20 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <form action="/moteles/edit/{{link.id}}" method="POST">
-                        <div class="form-group">
-                            <input type="text" name="Motel_Nombe" class="form-control" placeholder="Nombre Motel" value="{{link.Motel_Nombe}}" autofocus>
+                    <form action="/moteles/add" method="POST">
+                        <p class="color_texto"> Datos Generales</p>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" name="Motel_Nombre" class="form-control" placeholder="Nombre Motel" value="{{link.Motel_Nombre}}" autofocus>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" name="Direccion_Motel" class="form-control" placeholder="Direccion" value="{{link.Direccion_Motel}}">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <label class="input-group-text" for="inputGroupSelect01">{{link.comuna_nombre}}</label>
+                                    </div>
+                                    <select name="Comuna_Id" class="custom-select" id="inputGroupSelect01">
+                                    
+                                    {{#each comunas}}
+                                        {{const valido = compara(comuna_nombre, link.comuna_nombre)}}
+                                        {{#if valido}}
+                                            <option value={{id}} selected >{{comuna_nombre}}</option>
+                                        {{else}}
+                                            <option value={{id}}  >{{comuna_nombre}}</option>
+                                        {{/if}}
+                                    {{/each}}           
+                                    
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input type="text" name="Direccion_Motel" class="form-control" placeholder="Direccion" value="{{link.Direccion_Motel}}">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="Telefon_Motel" class="form-control" placeholder="Telefono" value="{{link.Telefono_Motel}}">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="Correo_Motel" class="form-control" placeholder="Email" value="{{link.Correo_Motel}}">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <input type="text" name="Telefono_Motel" class="form-control" placeholder="Telefono" value="{{link.Telefono_Motel}}">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <input type="email" name="Correo_Motel" class="form-control" placeholder="Email" value="{{link.Correo_Motel}}">
+                                </div>
+                            </div>
+                     
+                     
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <input type="text" name="Precio_Desde" class="form-control" placeholder="Precio Desde" value="{{link.Precio_Desde}}">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <input type="tex" name="Precio_Hasta" class="form-control" placeholder="Precio Hasta" value="{{link.Precio_Hasta}}">
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <input type="url" name="Web_Motel" class="form-control" placeholder="URL" value="{{link.Web_Motel}}">
                         </div>
                         <div class="form-group">
-                            <textarea name="Descripcion" rows="4" class="form-control" placeholder="Description">{{link.Descripcion}}</textarea>
+                            <textarea name="Descripcion" rows="4" class="form-control" placeholder="Descripcion">{{link.Descripcion}}</textarea>
                         </div>
-                        
                         <div class="form-group">
                             <button class="btn btn-success btn-block">
                                 Actualizar

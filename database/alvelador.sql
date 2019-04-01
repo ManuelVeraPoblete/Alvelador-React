@@ -422,7 +422,7 @@ CREATE TABLE `habitacion` (
 DROP TABLE IF EXISTS `motel`;
 CREATE TABLE `motel` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `Motel_Nombe` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `Motel_Nombre` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `Direccion_Motel` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `Telefono_Motel` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `Correo_Motel` varchar(50) COLLATE utf8_spanish_ci NOT NULL,

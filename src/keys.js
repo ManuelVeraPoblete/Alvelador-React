@@ -4,7 +4,7 @@ module.exports = {
         connectionLimit: 10,
         host: 'localhost',
         user: 'root',
-        password: '',
+        password: 'q1w2e3r4',
         database: 'alvelador'
     }
 

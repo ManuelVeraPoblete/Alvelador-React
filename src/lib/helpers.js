@@ -16,12 +16,6 @@ helpers.matchPassword = async (password, savedPassword) => {
   }
 };
 
-helpers.compara =  async (a, b, opts) => {
-  if (a == b) {
-      return true
-  } else {
-      return false
-  }
-};
+
 
 module.exports = helpers;
